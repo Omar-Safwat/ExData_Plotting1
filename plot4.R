@@ -1,12 +1,10 @@
-# Reading "household_power_consumption.txt" from file "data.txt" 
 library(dplyr)
 library(tidyr)
 library(lubridate)
-
 # Read in the col headers from the first line
-colHeaders <- read.csv2("data.txt", header = TRUE , nrows = 1)
+colHeaders <- read.csv2("household_power_consumption.txt", header = TRUE , nrows = 1)
 #Read only the required rows to save memory
-data <- read.csv2("data.txt", header = FALSE, skip = 66637, nrows = 2881, na.strings = "?")
+data <- read.csv2("household_power_consumption.txt", header = FALSE, skip = 66637, nrows = 2880, na.strings = "?")
 names(data) <- names(colHeaders)
 data <- as_tibble(data)
 
